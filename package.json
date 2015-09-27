@@ -8,6 +8,10 @@
     "postinstall": "npm run lib",
     "lib": "mkdir -p public && node -r 'babel-core/register' lib.js > public/lib.js"
   },
+  "engine": {
+    "node": "4.x.x",
+    "npm": "3.x.x"
+  },
   "author": "Shuhei Kagawa <shuhei.kagawa@gmail.com>",
   "license": "ISC",
   "devDependencies": {
