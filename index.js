@@ -19,7 +19,7 @@ const BABEL_OPTIONS = {
 
 const app = express();
 
-app.use(serveStatic('public'));
+app.use(serveStatic('public', { setHeaders }));
 
 app.get('/compile', (req, res) => {
   res.type('application/javascript');
@@ -56,6 +56,12 @@ const server = app.listen(PORT, () => {
   const { address, port } = server.address();
   console.log('Listening at %s:%s', address, port);
 });
+
+function setHeaders(res, path) {
+  if (path.indexOf('lib.js') >= 0) {
+    res.setHeader('Content-Encoding', 'gzip');
+  }
+}
 
 function showError(res, message, e) {
   const lines = []
