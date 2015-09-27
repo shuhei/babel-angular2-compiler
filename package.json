@@ -1,0 +1,32 @@
+{
+  "name": "babel-angular2-compiler",
+  "version": "0.0.1",
+  "description": "A server that transpile Angular 2 app on the fly with Babel.",
+  "scripts": {
+    "start": "node -r 'babel-core/register' index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npm run lib",
+    "lib": "mkdir -p public && node -r 'babel-core/register' lib.js > public/lib.js"
+  },
+  "author": "Shuhei Kagawa <shuhei.kagawa@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^4.1.1"
+  },
+  "dependencies": {
+    "angular2": "2.0.0-alpha.37",
+    "babel-core": "5.8.23",
+    "babel-plugin-angular2-annotations": "^2.0.0",
+    "babel-plugin-type-assertion": "^0.3.0",
+    "babelify": "^6.3.0",
+    "babylon": "5.8.23",
+    "browserify": "^11.0.1",
+    "express": "^4.13.3",
+    "reflect-metadata": "^0.1.0",
+    "rtts_assert": "2.0.0-alpha.37",
+    "serve-static": "^1.10.0",
+    "strip-ansi": "^3.0.0",
+    "tmp": "0.0.27",
+    "zone.js": "^0.5.5"
+  }
+}
